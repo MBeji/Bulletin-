@@ -109,20 +109,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calculateSubjectAverage(matiere) {
         if (!matiere) return NaN; // Guard clause if matiere is undefined
-        let sumOfGrades = 0;
-        let countOfGrades = 0;
-        gradeTypes.forEach(type => {
-            const gradeValue = matiere.grades[type];
-            if (gradeValue !== undefined && gradeValue !== null && !isNaN(parseFloat(gradeValue))) {
-                sumOfGrades += parseFloat(gradeValue);
-                countOfGrades++;
+
+        const weights = {
+            'devoir1': 1,
+            'devoir2': 1,
+            'synthese': 2
+        };
+        // gradeTypes is ['devoir1', 'devoir2', 'synthese']
+        // These keys match what's used in handleGradeChange and populateTable for dataset.gradeType
+
+        let weightedSum = 0;
+        let totalWeight = 0;
+
+        gradeTypes.forEach(type => { // Iterate using the defined gradeTypes
+            const gradeValue = matiere.grades[type]; // Access grades using keys like 'devoir1'
+            const weight = weights[type];
+
+            if (gradeValue !== undefined && gradeValue !== null && !isNaN(parseFloat(gradeValue)) && weight !== undefined) {
+                weightedSum += parseFloat(gradeValue) * weight;
+                totalWeight += weight;
             }
         });
 
-        if (countOfGrades === 0) {
-            return NaN; // Or 0, depending on how you want to treat no grades
+        if (totalWeight === 0) {
+            return NaN; // No valid grades with weights were entered
         }
-        return sumOfGrades / countOfGrades;
+        const average = weightedSum / totalWeight;
+        return average;
     }
 
     function updateSubjectAverageDisplay(matiereNom) {
