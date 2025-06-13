@@ -1,0 +1,261 @@
+body {
+    font-family: 'Arial', sans-serif; /* More specific sans-serif font */
+    margin: 0;
+    padding-bottom: 60px; /* Add padding to prevent footer overlap */
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; /* Improved readability */
+}
+
+header {
+    background-color: #0056b3; /* Changed header color */
+    color: #ffffff; /* White text for better contrast */
+    padding: 1.5rem 0; /* Increased padding */
+    text-align: center;
+    border-bottom: 4px solid #003d82; /* Darker border for depth */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem; /* Larger title */
+}
+
+header div {
+    padding: 0.5rem 1rem;
+    background-color: #004a99; /* Slightly lighter shade for info section */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 10px 20px; /* Spacing between items */
+}
+
+header div p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    background-color: #003d82; /* Background for each info item */
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+main {
+    padding: 1.5rem; /* Increased padding */
+    max-width: 900px; /* Slightly wider content area */
+    margin: 30px auto; /* Increased margin */
+    background-color: #ffffff; /* White background for content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    border-radius: 8px; /* Rounded corners for the main content block */
+}
+
+#gradesSection h2, #resultsSummary h2 {
+    color: #0056b3; /* Theme color for headings */
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem; /* More space above section titles */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem; /* Increased margin */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for table */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Lighter border color */
+    padding: 12px 10px; /* Increased padding */
+    text-align: left;
+    vertical-align: middle; /* Better alignment for cell content */
+}
+
+th {
+    background-color: #e9ecef; /* Lighter, neutral header */
+    color: #333;
+    font-weight: bold; /* Bold header text */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+input[type="number"], input[type="text"] { /* Style text inputs as well */
+    width: calc(100% - 12px); /* Make inputs responsive within cells */
+    padding: 6px;
+    margin: 0; /* Remove default margins */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#resultsSummary p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: #e9ecef;
+    border-left: 4px solid #0056b3; /* Accent line */
+    border-radius: 4px;
+}
+
+#resultsSummary span {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #343a40; /* Darker footer */
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+/* Styles for Manage Subjects Section */
+#manageSubjectsSection {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#manageSubjectsSection h2 {
+    margin-top: 0; /* Remove default top margin for h2 inside this section */
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 0.5rem;
+}
+
+#manageSubjectsSection div {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    align-items: center;
+    gap: 10px; /* Space between elements */
+    margin-top: 1rem;
+}
+
+#manageSubjectsSection label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#manageSubjectsSection input[type="text"],
+#manageSubjectsSection input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    flex-grow: 1; /* Allow inputs to grow */
+}
+
+#manageSubjectsSection input[type="text"] {
+    min-width: 150px; /* Minimum width for name input */
+}
+
+#manageSubjectsSection input[type="number"] {
+    min-width: 80px; /* Minimum width for coefficient input */
+    max-width: 120px;
+}
+
+#addSubjectBtn, .remove-subject-btn {
+    padding: 8px 15px;
+    color: #fff;
+    background-color: #007bff; /* Primary button color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#addSubjectBtn:hover, .remove-subject-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.remove-subject-btn {
+    background-color: #dc3545; /* Red color for remove buttons */
+    font-size: 0.8rem; /* Smaller font for remove buttons in table */
+    padding: 5px 10px; /* Smaller padding */
+}
+
+.remove-subject-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+
+/* Responsive adjustments */
+.table-container { /* For making table scrollable */
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) { /* Adjusted breakpoint */
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header div {
+        flex-direction: column; /* Stack student info on smaller screens */
+        align-items: center;
+    }
+
+    main {
+        margin: 20px 10px; /* Adjusted margin for smaller screens */
+        padding: 1rem;
+    }
+
+    th, td {
+        padding: 10px 8px; /* Slightly reduced padding */
+    }
+
+    input[type="number"], input[type="text"] {
+        font-size: 0.9rem; /* Adjust font size for inputs */
+    }
+
+    /* If table is too wide, allow horizontal scrolling */
+    #gradesTable {
+        display: block; /* Necessary for overflow-x to work on table */
+        width: auto; /* Allow table to be wider than container */
+    }
+    .table-wrapper { /* Wrapper div for the table for better scroll handling */
+        overflow-x: auto;
+        margin-top: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        padding-bottom: 80px; /* Adjust for potentially taller footer or input elements */
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header div p {
+        font-size: 0.85rem;
+        padding: 4px 8px;
+    }
+    #resultsSummary p {
+        font-size: 1rem;
+    }
+    footer {
+        font-size: 0.8rem;
+    }
+
+    #manageSubjectsSection div {
+        flex-direction: column; /* Stack inputs and button vertically */
+        align-items: stretch; /* Make elements take full width */
+    }
+
+    #manageSubjectsSection input[type="text"],
+    #manageSubjectsSection input[type="number"],
+    #addSubjectBtn {
+        width: 100%; /* Full width for stacked elements */
+        margin-bottom: 10px; /* Add some space between stacked elements */
+    }
+
+    #manageSubjectsSection input[type="number"] {
+        max-width: none; /* Allow coefficient input to take full width when stacked */
+    }
+}
